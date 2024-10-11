@@ -345,16 +345,11 @@ class _TempDailyTasksPageState extends State<TempDailyTasksPage> {
   }
 
   List<String> factsYouNeedToKnow = [
-    "Did you know that staying hydrated can boost your energy levels?",
-    "Exercise releases endorphins, which can improve your mood.",
-    "Sleep is crucial; it helps your brain function and boosts your immune system.",
-    "Regular stretching can improve flexibility and reduce muscle tension.",
-    "Eating a balanced diet can help maintain a healthy weight and energy.",
-    "Mindfulness meditation can reduce stress and enhance focus.",
-    "Taking breaks during work can improve productivity and reduce fatigue.",
-    "Social connections can significantly improve mental health and longevity.",
-    "Spending time outdoors can boost your vitamin D levels and mood.",
-    "Laughter is linked to lower stress levels and better heart health."
+    "Staying hydrated boosts energy.",
+    "Exercise releases endorphins for a better mood.",
+    "Sleep enhances brain function and immunity.",
+    "Mindfulness meditation reduces stress and enhances focus.",
+    "Social connections improve mental health and longevity."
   ];
   int currentSetIndex = 0; // Add this to your state
   int startIndex = 0;
@@ -396,7 +391,7 @@ class _TempDailyTasksPageState extends State<TempDailyTasksPage> {
   Widget build(BuildContext context) {
     bool isTempListTooShort = temporaryTasks.length < 4;
     return Scaffold(
-       appBar: AppBar(
+      appBar: AppBar(
         title: const Text(
           'HCA HealthCare',
           style: TextStyle(color: Colors.white),
@@ -406,7 +401,7 @@ class _TempDailyTasksPageState extends State<TempDailyTasksPage> {
         iconTheme: const IconThemeData(color: Colors.white),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-        onPressed: () {
+          onPressed: () {
             Navigator.of(context).pop(); // Navigate back
           },
         ),
@@ -771,7 +766,7 @@ class TempChallengeTile extends StatelessWidget {
           gradient: const LinearGradient(
             colors: [
               Color.fromARGB(255, 255, 255, 255),
-              Color.fromARGB(251, 0, 85, 255)
+              Color.fromARGB(249, 129, 168, 246)
             ],
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
