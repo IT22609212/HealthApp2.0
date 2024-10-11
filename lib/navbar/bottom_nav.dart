@@ -61,6 +61,7 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.info_outline),
             label: 'About',
+            
           ),
         ],
         currentIndex: _selectedIndex, // Highlight the selected item
