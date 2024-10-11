@@ -100,7 +100,8 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
             FocusScope.of(context).unfocus(); // Hide the keyboard on tap
           },
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.symmetric(vertical: 70, horizontal: 16),
+            // padding: const EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[

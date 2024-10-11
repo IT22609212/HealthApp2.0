@@ -95,17 +95,13 @@ class _DailyChallengesPageState extends State<DailyChallengesPage> {
   }
 
   List<String> factsYouNeedToKnow = [
-    "Did you know that staying hydrated can boost your energy levels?",
-    "Exercise releases endorphins, which can improve your mood.",
-    "Sleep is crucial; it helps your brain function and boosts your immune system.",
-    "Regular stretching can improve flexibility and reduce muscle tension.",
-    "Eating a balanced diet can help maintain a healthy weight and energy.",
-    "Mindfulness meditation can reduce stress and enhance focus.",
-    "Taking breaks during work can improve productivity and reduce fatigue.",
-    "Social connections can significantly improve mental health and longevity.",
-    "Spending time outdoors can boost your vitamin D levels and mood.",
-    "Laughter is linked to lower stress levels and better heart health."
+    "Staying hydrated boosts energy.",
+    "Exercise releases endorphins for a better mood.",
+    "Sleep enhances brain function and immunity.",
+    "Mindfulness meditation reduces stress and enhances focus.",
+    "Social connections improve mental health and longevity."
   ];
+
   int currentSetIndex = 0; // Add this to your state
   int startIndex = 0;
 
@@ -696,13 +692,13 @@ class ChallengeTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 0),
+      margin: const EdgeInsets.symmetric(vertical: 7.0, horizontal: 0),
       elevation: 10,
       child: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color.fromARGB(251, 0, 85, 255),
+              Color.fromARGB(250, 72, 128, 239),
               Color.fromARGB(255, 255, 255, 255)
             ],
             begin: Alignment.centerLeft,
@@ -719,11 +715,15 @@ class ChallengeTile extends StatelessWidget {
               title: Text(
                 title,
                 style: TextStyle(
+                  color: Colors.black,
                   fontWeight: FontWeight.bold,
                   decoration: isDone ? TextDecoration.lineThrough : null,
                 ),
               ),
-              subtitle: Text(time as String),
+              subtitle: Text(
+                time as String,
+                style: TextStyle(color: Colors.black),
+              ),
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -754,7 +754,11 @@ class ChallengeTile extends StatelessWidget {
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
                   instructions,
-                  style: const TextStyle(color: Colors.black, fontSize: 20),
+                  style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ],
@@ -789,17 +793,17 @@ class CongratulationsPage extends StatelessWidget {
     final motivationalTip = tips[randomIndex];
 
     return Scaffold(
-   appBar: AppBar(
+      appBar: AppBar(
         title: const Text(
           'Status Update',
-          style: TextStyle(color:  Colors.white),
+          style: TextStyle(color: Colors.white),
         ),
         backgroundColor: const Color.fromARGB(255, 32, 107, 219),
         centerTitle: true,
         iconTheme: const IconThemeData(color: Colors.white),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-        onPressed: () {
+          onPressed: () {
             Navigator.of(context).pop(); // Navigate back
           },
         ),

@@ -31,7 +31,7 @@ class StatusUpdateScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Status Update',
-          style: TextStyle(color:Colors.white),
+          style: TextStyle(color: Colors.white),
         ),
         backgroundColor: const Color.fromARGB(255, 32, 107, 219),
         centerTitle: true,
@@ -62,13 +62,12 @@ class StatusUpdateScreen extends StatelessWidget {
                           vertical: 5, horizontal: 20),
                       child: const Row(
                         children: [
-                          Icon(Icons.arrow_back),
                           Text(
                             'Daily Challenges',
                             style: TextStyle(
                               fontSize: 24,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black,
+                              color: Colors.white,
                             ),
                           ),
                         ],
@@ -103,6 +102,7 @@ class StatusUpdateScreen extends StatelessWidget {
                         horizontal: 30, vertical: 16),
                     child: Row(
                       children: [
+                        SizedBox(width: 50),
                         Expanded(
                           child: ElevatedButton(
                             onPressed: () {
@@ -131,7 +131,7 @@ class StatusUpdateScreen extends StatelessWidget {
                         ),
                         const Icon(Icons.arrow_circle_left_rounded,
                             color: Color.fromARGB(255, 3, 3, 3)),
-                        const SizedBox(width: 80),
+                        const SizedBox(width: 50),
                       ],
                     ),
                   );
