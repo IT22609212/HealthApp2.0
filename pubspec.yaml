@@ -43,6 +43,8 @@ dependencies:
   percent_indicator: ^4.2.2
   flutter_local_notifications: ^12.0.4
   intl: ^0.17.0
+  timezone: ^0.9.1
+ 
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +72,10 @@ flutter:
   assets:
     - lib/assets/images/home.png
     - lib/assets/images/40ywomen.jpg
+    - lib/assets/images/medremind.png
+    - lib/assets/images/mood.png
+    - lib/assets/images/scale.png
+    - lib/assets/images/task.png
     - assets/images/
 
   # assets:

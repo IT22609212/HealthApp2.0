@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/navbar/bottom_nav.dart';
 import 'package:my_first_app/screens/dashboard.dart';
 import 'bmi_category.dart';
 
@@ -88,7 +89,7 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.of(context).pushReplacement(MaterialPageRoute(
-              builder: (context) => DashBoard(),
+              builder: (context) => HomePage(),
             )); // Navigate back to the main screen
           },
         ),

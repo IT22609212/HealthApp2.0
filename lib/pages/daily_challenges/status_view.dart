@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/navbar/bottom_nav.dart';
 import 'package:my_first_app/screens/dashboard.dart';
 import 'daily_tasks.dart';
 import 'temp_tasks.dart';
@@ -30,7 +31,7 @@ class StatusUpdateScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Status Update',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color:Colors.white),
         ),
         backgroundColor: const Color.fromARGB(255, 32, 107, 219),
         centerTitle: true,
@@ -39,7 +40,7 @@ class StatusUpdateScreen extends StatelessWidget {
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.of(context).pushReplacement(MaterialPageRoute(
-              builder: (context) => DashBoard(),
+              builder: (context) => HomePage(),
             )); // Navigate back to the main screen
           },
         ),

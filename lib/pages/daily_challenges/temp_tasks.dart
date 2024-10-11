@@ -396,17 +396,19 @@ class _TempDailyTasksPageState extends State<TempDailyTasksPage> {
   Widget build(BuildContext context) {
     bool isTempListTooShort = temporaryTasks.length < 4;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.menu, size: 35),
-          onPressed: () {},
-        ),
-        centerTitle: true,
+       appBar: AppBar(
         title: const Text(
-          'HCA Healthcare',
-          style: TextStyle(color: Colors.black),
+          'HCA HealthCare',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: const Color.fromARGB(255, 32, 107, 219),
+        centerTitle: true,
+        iconTheme: const IconThemeData(color: Colors.white),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+        onPressed: () {
+            Navigator.of(context).pop(); // Navigate back
+          },
         ),
       ),
       body: Padding(

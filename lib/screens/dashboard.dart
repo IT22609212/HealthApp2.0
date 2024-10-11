@@ -8,6 +8,8 @@ import 'package:my_first_app/screens/medi_Home.dart';
 import 'package:my_first_app/screens/mood_selection_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart'; // Import FontAwesome
 
+
+
 class DashBoard extends StatefulWidget {
   const DashBoard({super.key});
   @override
@@ -103,7 +105,7 @@ Widget ContactInfoSection(BuildContext context) {
                     },
                   ),
                   IconButton(
-                    icon: FaIcon(FontAwesomeIcons.balanceScale,
+                     icon: FaIcon(FontAwesomeIcons.balanceScale,
                         color: Colors.white),
                     onPressed: () {
                       Navigator.push(
@@ -114,7 +116,7 @@ Widget ContactInfoSection(BuildContext context) {
                     },
                   ),
                   IconButton(
-                    icon: FaIcon(FontAwesomeIcons.tasks, color: Colors.white),
+                   icon: FaIcon(FontAwesomeIcons.tasks, color: Colors.white),
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -124,7 +126,7 @@ Widget ContactInfoSection(BuildContext context) {
                     },
                   ),
                   IconButton(
-                    icon: FaIcon(FontAwesomeIcons.smile, color: Colors.white),
+                   icon: FaIcon(FontAwesomeIcons.smile, color: Colors.white),
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -141,59 +143,57 @@ Widget ContactInfoSection(BuildContext context) {
         SizedBox(height: 20.0),
 
         // GridView for Category Cards
-        GridView.builder(
-          shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 1,
-            crossAxisSpacing: 16.0,
-            mainAxisSpacing: 16.0,
-          ),
-          itemCount: categories.length,
-          itemBuilder: (context, index) {
-            final category = categories[index];
-            return GestureDetector(
-              onTap: () {
-                // Wrap onTap function in a closure that takes no arguments
-                category['onTap'](context);
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white, // Set the card color to white
-                  borderRadius: BorderRadius.circular(10.0),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5), // Shadow color
-                      spreadRadius: 2, // How much the shadow spreads
-                      blurRadius: 5, // Softness of the shadow
-                      offset: Offset(0, 3), // Shadow position (x, y)
-                    ),
-                  ],
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    FaIcon(
-                      category['icon'],
-                      color: AppColors.baseColor, // Set icon color to baseColor
-                      size: 40,
-                    ),
-                    SizedBox(height: 10.0),
-                    Text(
-                      category['title'],
-                      style: TextStyle(
-                        color:
-                            AppColors.baseColor, // Set text color to baseColor
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
-          },
+        // GridView for Category Cards
+GridView.builder(
+  shrinkWrap: true,
+  physics: NeverScrollableScrollPhysics(),
+  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+    crossAxisCount: 2,
+    childAspectRatio: 1,
+    crossAxisSpacing: 16.0,
+    mainAxisSpacing: 16.0,
+  ),
+  itemCount: categories.length,
+  itemBuilder: (context, index) {
+    final category = categories[index];
+    return GestureDetector(
+      onTap: () {
+        // Wrap onTap function in a closure that takes no arguments
+        category['onTap'](context);
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white, // Set the card color to white
+          borderRadius: BorderRadius.circular(10.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5), // Shadow color
+              spreadRadius: 2, // How much the shadow spreads
+              blurRadius: 5, // Softness of the shadow
+              offset: Offset(0, 3), // Shadow position (x, y)
+            ),
+          ],
         ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // Use Image.asset() to display the image
+            category['icon'], // Image widget
+            SizedBox(height: 10.0),
+            Text(
+              category['title'],
+              style: TextStyle(
+                color: Colors.black, // Set text color to baseColor
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  },
+),
+
       ],
     ),
   );
@@ -203,7 +203,7 @@ Widget ContactInfoSection(BuildContext context) {
 List<Map<String, dynamic>> categories = [
   {
     'title': 'Medication Reminder',
-    'icon': FontAwesomeIcons.pills,
+    'icon': Image.asset('lib/assets/images/medremind.png', height: 80),
     'color': const Color.fromARGB(255, 220, 230, 233),
     'onTap': (context) {
       Navigator.push(
@@ -214,7 +214,7 @@ List<Map<String, dynamic>> categories = [
   },
   {
     'title': 'BMI Calculator',
-    'icon': FontAwesomeIcons.balanceScale,
+    'icon':  Image.asset('lib/assets/images/scale.png', height: 80),
     'color': const Color.fromARGB(255, 220, 230, 233),
     'onTap': (context) {
       Navigator.push(
@@ -225,7 +225,7 @@ List<Map<String, dynamic>> categories = [
   },
   {
     'title': 'Daily Challenges',
-    'icon': FontAwesomeIcons.tasks,
+    'icon': Image.asset('lib/assets/images/task.png', height: 80),
     'color': const Color.fromARGB(255, 220, 230, 233),
     'onTap': (context) {
       Navigator.push(
@@ -236,7 +236,7 @@ List<Map<String, dynamic>> categories = [
   },
   {
     'title': 'Mood Tracker',
-    'icon': FontAwesomeIcons.smile,
+    'icon': Image.asset('lib/assets/images/mood.png', height: 80),
     'color': const Color.fromARGB(255, 220, 230, 233),
     'onTap': (context) {
       Navigator.push(

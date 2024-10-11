@@ -220,16 +220,20 @@ class _DailyChallengesPageState extends State<DailyChallengesPage> {
     const maxRefreshCount = 3;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.menu, size: 35),
-          onPressed: () {},
+        title: Text(
+          "HCA HealthCare",
+          style: const TextStyle(
+              color: Colors.white), // Change text color to white
         ),
+        backgroundColor: const Color.fromARGB(255, 32, 107, 219),
         centerTitle: true,
-        title: const Text(
-          'HCA Healthcare',
-          style: TextStyle(color: Colors.black),
+        iconTheme: const IconThemeData(
+            color: Colors.white), // Change button color to white
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back), // Back button icon
+          onPressed: () {
+            Navigator.of(context).pop(); // Navigate back
+          },
         ),
       ),
       body: Padding(
@@ -785,17 +789,19 @@ class CongratulationsPage extends StatelessWidget {
     final motivationalTip = tips[randomIndex];
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.menu, size: 35),
-          onPressed: () {},
-        ),
-        centerTitle: true,
+   appBar: AppBar(
         title: const Text(
-          'HCA Healthcare',
-          style: TextStyle(color: Colors.black),
+          'Status Update',
+          style: TextStyle(color:  Colors.white),
+        ),
+        backgroundColor: const Color.fromARGB(255, 32, 107, 219),
+        centerTitle: true,
+        iconTheme: const IconThemeData(color: Colors.white),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+        onPressed: () {
+            Navigator.of(context).pop(); // Navigate back
+          },
         ),
       ),
       body: Center(

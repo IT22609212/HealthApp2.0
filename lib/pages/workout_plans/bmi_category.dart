@@ -10,9 +10,18 @@ class CategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+        appBar: AppBar(
         title: Text('$category Plans'),
-        backgroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 32, 107, 219),
+        centerTitle: true,
+        iconTheme: const IconThemeData(
+            color: Colors.white), // Change button color to white
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back), // Back button icon
+          onPressed: () {
+            Navigator.of(context).pop(); // Navigate back
+          },
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(

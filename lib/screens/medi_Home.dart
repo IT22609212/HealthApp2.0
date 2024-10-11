@@ -42,39 +42,45 @@ class _HomePageState extends State<MediHome> {
   // Function to schedule notification
   Future<void> scheduleNotification(
       String medicineName, TimeOfDay reminderTime) async {
-    // Convert TimeOfDay to DateTime
-    final now = DateTime.now();
-    DateTime scheduledTime = DateTime(
-        now.year, now.month, now.day, reminderTime.hour, reminderTime.minute);
+    debugPrint('Scheduling notification for $medicineName at $reminderTime');
+    try {
+      // Convert TimeOfDay to DateTime
+      final now = DateTime.now();
+      DateTime scheduledTime = DateTime(
+          now.year, now.month, now.day, reminderTime.hour, reminderTime.minute);
 
-    // If the time is already passed today, schedule it for tomorrow
-    if (scheduledTime.isBefore(now)) {
-      scheduledTime = scheduledTime.add(const Duration(days: 1));
+      // If the time has already passed today, schedule for tomorrow
+      if (scheduledTime.isBefore(now)) {
+        scheduledTime = scheduledTime.add(const Duration(days: 1));
+      }
+
+      const AndroidNotificationDetails androidPlatformChannelSpecifics =
+          AndroidNotificationDetails(
+        'medicine_reminders_channel',
+        'Medicine Reminders',
+        channelDescription: 'Channel for medicine reminder notifications',
+        importance: Importance.max,
+        priority: Priority.high,
+        showWhen: true,
+      );
+
+      const NotificationDetails platformChannelSpecifics =
+          NotificationDetails(android: androidPlatformChannelSpecifics);
+
+      await flutterLocalNotificationsPlugin.zonedSchedule(
+        0, // Unique ID
+        'Medication Reminder',
+        'Time to take your medicine: $medicineName',
+        tz.TZDateTime.from(scheduledTime, tz.local),
+        platformChannelSpecifics,
+        androidAllowWhileIdle: true,
+        uiLocalNotificationDateInterpretation:
+            UILocalNotificationDateInterpretation.absoluteTime,
+      );
+    } catch (e) {
+      // Handle any scheduling errors
+      debugPrint('Error scheduling notification: $e');
     }
-
-    const AndroidNotificationDetails androidPlatformChannelSpecifics =
-        AndroidNotificationDetails(
-      'medicine_reminders_channel',
-      'Medicine Reminders',
-      channelDescription: 'Channel for medicine reminder notifications',
-      importance: Importance.max,
-      priority: Priority.high,
-      showWhen: false,
-    );
-
-    const NotificationDetails platformChannelSpecifics =
-        NotificationDetails(android: androidPlatformChannelSpecifics);
-
-    await flutterLocalNotificationsPlugin.zonedSchedule(
-      0, // Unique ID
-      'Medication Reminder',
-      'Time to take your medicine: $medicineName',
-      tz.TZDateTime.from(scheduledTime, tz.local),
-      platformChannelSpecifics,
-      androidAllowWhileIdle: true,
-      uiLocalNotificationDateInterpretation:
-          UILocalNotificationDateInterpretation.absoluteTime,
-    );
   }
 
   @override
@@ -132,14 +138,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 fit: BoxFit.contain,
               ),
             ),
-            const SizedBox(height: 12.0),
-            const Text(
-              'Medicine Reminders',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 24.0,
-              ),
-            ),
             const SizedBox(height: 16.0),
             StreamBuilder(
               stream: FirebaseFirestore.instance
@@ -191,7 +189,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
                         IconData medicineIcon =
                             getIconForMedicineType(medicineType);
-
                         return Stack(
                           children: [
                             Card(
@@ -206,7 +203,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         size: 50.0,
                                         color: const Color.fromRGBO(
                                             32, 107, 219, 1)),
-                                    const SizedBox(height: 8.0),
+                                    const SizedBox(height: 4.0),
                                     Text(
                                       medicine['medicine_name'],
                                       style: const TextStyle(
@@ -254,8 +251,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ),
                             Positioned(
-                              top: 4,
-                              left: 4,
+                              bottom: 26,
+                              right: 8,
                               child: IconButton(
                                 icon: const Icon(Icons.delete,
                                     size: 16.0,
