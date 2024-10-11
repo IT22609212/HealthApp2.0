@@ -29,7 +29,10 @@ class PlanDescriptionScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('$category ➔ Plan $planNumber'),
+        title: Text(
+          '$category ➔ Plan $planNumber',
+          style: const TextStyle(color: Colors.white),
+        ),
         backgroundColor: const Color.fromARGB(255, 32, 107, 219),
         centerTitle: true,
         iconTheme: const IconThemeData(

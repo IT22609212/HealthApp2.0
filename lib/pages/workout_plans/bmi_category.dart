@@ -10,8 +10,12 @@ class CategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-        title: Text('$category Plans'),
+      appBar: AppBar(
+        title: Text(
+          '$category Plans',
+          style:
+              const TextStyle(color: Colors.white), // Set text color to white
+        ),
         backgroundColor: const Color.fromARGB(255, 32, 107, 219),
         centerTitle: true,
         iconTheme: const IconThemeData(

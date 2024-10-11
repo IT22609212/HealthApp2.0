@@ -149,19 +149,31 @@ class _BMICalculatorScreenState extends State<BMICalculatorScreen> {
                     ),
                   ],
                 ),
-                Slider(
-                  value: height,
-                  min: 50.0,
-                  max: 280.0,
-                  divisions: 120,
-                  label: '${height.toStringAsFixed(1)} cm',
-                  activeColor: Colors.blueAccent,
-                  onChanged: (double newValue) {
-                    setState(() {
-                      height = newValue;
-                      _controllerHeight.text = height.toStringAsFixed(1);
-                    });
-                  },
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 40.0), // Adjust padding
+                        child: Slider(
+                          value: height,
+                          min: 50.0,
+                          max: 280.0,
+                          divisions: 120,
+                          label: '${height.toStringAsFixed(1)} cm',
+                          activeColor: Colors.blueAccent,
+                          onChanged: (double newValue) {
+                            setState(() {
+                              height = newValue;
+                              _controllerHeight.text =
+                                  height.toStringAsFixed(1);
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 30),
                 Row(
