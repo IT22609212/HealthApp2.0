@@ -94,27 +94,27 @@ class CustomAppBar extends StatelessWidget {
             ],
           ),
           // Notification and Settings Icons
-          Row(
-            children: [
-              IconButton(
-                icon: const Icon(Icons.notifications_none, color: Colors.white),
-                onPressed: () {
-                  // Handle notification press
-                },
-              ),
-              IconButton(
-                icon: const Icon(Icons.settings, color: Colors.white),
-                onPressed: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //     builder: (context) => AppSettingsPage(),
-                  //   ),
-                  // );
-                },
-              ),
-            ],
-          ),
+          // Row(
+          //   children: [
+          //     IconButton(
+          //       icon: const Icon(Icons.notifications_none, color: Colors.white),
+          //       onPressed: () {
+          //         // Handle notification press
+          //       },
+          //     ),
+          //     IconButton(
+          //       icon: const Icon(Icons.settings, color: Colors.white),
+          //       onPressed: () {
+          //         // Navigator.push(
+          //         //   context,
+          //         //   MaterialPageRoute(
+          //         //     builder: (context) => AppSettingsPage(),
+          //         //   ),
+          //         // );
+          //       },
+          //     ),
+          //   ],
+          // ),
         ],
       ),
       elevation: 2, // Add this line for shadow

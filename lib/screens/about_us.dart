@@ -162,7 +162,7 @@ Widget ContactCard({required String content}) {
         content,
         style: TextStyle(
           fontSize: 14,
-          color: AppColors.baseColor, // Darker color for text
+          color: const Color.fromARGB(255, 22, 22, 22), // Darker color for text
         ),
       ),
     ),
