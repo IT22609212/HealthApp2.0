@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:my_first_app/navbar/bottom_nav.dart';
 import 'package:my_first_app/screens/login_screen.dart';
 
 class RegisterPage extends StatelessWidget {
@@ -12,7 +13,9 @@ class RegisterPage extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+          backgroundColor: Colors.white,
         appBar: AppBar(
+            backgroundColor: Colors.white,
           title: const Text(''),
           centerTitle: true,
         ),
@@ -162,7 +165,12 @@ class _FormExampleState extends State<FormExample> {
                       ),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-                          // Process login
+                           Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    HomePage()), // Update HomePage to your actual home page widget
+                          );
                         }
                       },
                       child: const Center(
@@ -256,7 +264,7 @@ class _FormExampleState extends State<FormExample> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const FormExampleApp(
+                        builder: (context) => const LoginScreen(
                           title: '',
                         ),
                       ),

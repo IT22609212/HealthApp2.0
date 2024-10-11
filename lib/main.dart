@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:my_first_app/firebase_options.dart';
 import 'package:my_first_app/navbar/bottom_nav.dart';
 import 'package:my_first_app/screens/dashboard.dart';
+import 'package:my_first_app/screens/login_screen.dart';
 import 'package:my_first_app/screens/medi_Home.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 // import 'package:my_first_app/screens/testpage.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        body: HomePage(), // Use PaymentWebView widget here
+        body: LoginScreen(title: '',), // Use PaymentWebView widget here
       ), // Provide a valid title
     );
   }

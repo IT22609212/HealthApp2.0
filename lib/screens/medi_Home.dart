@@ -109,6 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
           widget.title,
@@ -192,6 +193,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         return Stack(
                           children: [
                             Card(
+                              color: Colors.white,
                               elevation: 4,
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),

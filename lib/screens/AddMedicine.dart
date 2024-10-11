@@ -54,9 +54,14 @@ class _AddMedicineState extends State<AddMedicine> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Add New Medicine'),
+        
+        title: const Text('Add New Medicine',style: const TextStyle(
+              color: Colors.white)),
         backgroundColor: const Color(0xFF377DE6),
+         centerTitle: true,
+        iconTheme: const IconThemeData(color: Colors.white),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {

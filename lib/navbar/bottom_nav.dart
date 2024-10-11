@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/colors/colors.dart';
 import 'package:my_first_app/pages/workout_plans/bmi_calculator.dart';
+import 'package:my_first_app/screens/about_us.dart';
 import 'package:my_first_app/screens/medi_Home.dart';
 import 'package:my_first_app/screens/dashboard.dart';
 
@@ -33,7 +34,7 @@ class _HomePageState extends State<HomePage> {
         widget = MediHome();
         break;
       case 2:
-        widget = const BMICalculatorApp();
+        widget =  AboutPage();
         break;
       // case 3:
       //   widget = AboutPage();
@@ -50,17 +51,17 @@ class _HomePageState extends State<HomePage> {
           ),
 
           BottomNavigationBarItem(
-            icon: Icon(Icons.message),
-            label: 'Support',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.money_rounded),
-            label: 'Bills',
+            icon: Icon(Icons.access_time),
+            label: 'Reminder',
           ),
           // BottomNavigationBarItem(
-          //   icon: Icon(Icons.info_outline),
-          //   label: 'About',
+          //   icon: Icon(Icons.money_rounded),
+          //   label: 'Bills',
           // ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.info_outline),
+            label: 'About',
+          ),
         ],
         currentIndex: _selectedIndex, // Highlight the selected item
         selectedItemColor: AppColors.baseColor, // Color for selected item

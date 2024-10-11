@@ -1,10 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:my_first_app/navbar/bottom_nav.dart';
 import 'package:my_first_app/screens/medi_Home.dart';
 import 'package:my_first_app/screens/Register.dart';
 
-class FormExampleApp extends StatelessWidget {
-  const FormExampleApp({super.key, required this.title});
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key, required this.title});
 
   final String title;
 
@@ -13,7 +14,9 @@ class FormExampleApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+          backgroundColor: Colors.white,
         appBar: AppBar(
+            backgroundColor: Colors.white,
           title: const Text(''),
           centerTitle: true,
         ),
@@ -126,7 +129,7 @@ class _FormExampleState extends State<FormExample> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    MediHome()), // Update HomePage to your actual home page widget
+                                    HomePage()), // Update HomePage to your actual home page widget
                           );
                         }
                       },
